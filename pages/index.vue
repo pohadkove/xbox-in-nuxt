@@ -35,7 +35,7 @@
   <div><NuxtLink to="./temp"><img class="rounded-lg border-4 border-transparent hover:border-primary w-60 h-60" src="https://venturebeat.com/wp-content/uploads/2016/06/netflix-logo.png?fit=2048%2C2048&strip=all"></NuxtLink></div>
   <div><img class="rounded-lg border-4 border-transparent hover:border-primary w-60 h-60" src="https://pbs.twimg.com/media/FKVoOYOXoAABU4E?format=jpg&name=medium"></div>
   <div><img class="rounded-lg border-4 border-transparent hover:border-primary w-60 h-60" src="https://cdn.vox-cdn.com/thumbor/lZYVMlOfLbZsA6GqBPWmXpsdlPc=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/10692939/687474703a2f2f692e696d6775722e636f6d2f476c537665734d2e6a7067.jpg"></div>
-  <div><img class="rounded-lg border-4 border-transparent hover:border-primary w-60 h-60" src="https://yt3.ggpht.com/Qccfw7Qo-C5fL17x4OLlHpfL5B80uGYmi6v6NT9h69z_HdfwrDdO68XkVLXS_DdQXjqvYPLGfQ=s900-c-k-c0x00ffffff-no-rj"></div>
+  <div><img class="rounded-lg border-4 border-transparent hover:border-primary w-60 h-60" src="https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png"></div>
   <div><img class="rounded-lg border-4 border-transparent hover:border-primary w-60 h-60" src="https://images.nintendolife.com/759b714170cf4/ori-and-the-will-of-the-wisps-cover.cover_large.jpg"></div>
   <div><img class="rounded-lg border-4 border-transparent hover:border-primary w-60 h-60" src="https://www.mobygames.com/images/covers/l/601919-call-of-duty-modern-warfare-playstation-4-front-cover.png"></div>
   <div><img class="rounded-lg border-4 border-transparent hover:border-primary w-60 h-60" src="https://www.mobygames.com/images/covers/l/672322-minecraft-playstation-4-front-cover.jpg"></div>
@@ -81,19 +81,11 @@ export default {
 }
 
 
+let date = new Date();
+	date = date.toLocaleTimeString([], { timeStyle: 'short' });
+	setInterval(() => {
+		date = new Date();
+    document.getElementById("time").innerHTML = date
+	}, 1000);
 
-if (process.client) {
-var hr = d.getHours();
-var min = d.getMinutes();
-if (min < 10) {
-    min = "0" + min;
-}
-var ampm = "am";
-if( hr > 12 ) {
-    hr -= 12;
-    ampm = "pm";
-}
-var x = document.getElementById("time");
-x.innerHTML = hr + ":" + min + ampm ;
-}
 </script>
